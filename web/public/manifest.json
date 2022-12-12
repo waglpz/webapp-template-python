@@ -1,0 +1,32 @@
+{
+  "short_name": "@PROJECT_NAME_HUMAN@",
+  "name": "@PROJECT_NAME_HUMAN@ Web Application",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "@VENDOR_NAME@_64x64.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "@VENDOR_NAME@_225x225.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "@VENDOR_NAME@_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "lang": "de_DE"
+}
