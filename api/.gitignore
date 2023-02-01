@@ -1,0 +1,26 @@
+flask/
+*.pyc
+dev
+api/apidata.db
+*.psd
+env/
+env__/
+.vscode/symbols.json
+.env__
+.env
+
+# Pyton specific Byte-compiled / optimized / DLL files
+**/__pycache__/
+*.py[cod]
+
+# contains variable data relating to app eg chache, logs
+/var
+!/var/log
+/var/log/*
+!/var/log/.gitkeep
+
+!**/.gitignore
+!**/.gitkeep
+
+# Python Virtual Environment
+venv

@@ -11,10 +11,10 @@
 In the folder of your choice, enter the following commands:
 
 #### Clone the Repository local:
-`git clone git@gitlab.com:veolia.com/germany/wasser-deutschland-gmbh/allgemein/authzprovider.git`
+`git clone git@gitlab.com:@VENDOR_NAME@.com/germany/wasser-deutschland-gmbh/allgemein/@PROJECT_NAME@.git`
 
 #### Open Project directory:
-`cd authzprovider`
+`cd @PROJECT_NAME@`
 
 #### Create `.env` file for docker compose:
 `bash -c "$(cat .doc/docker.md | grep printf)"`
@@ -34,30 +34,30 @@ PYTHON_VIRTUAL_ENV=/opt/venv
 
 wait please until all related images are downloaded and compiled
                                                               
-#### Add mapping for hosts of authzprovider app  
-`sudo su -c 'echo "## authzprovider APP" >> /etc/hosts && cat docker-compose.yml | grep "/etc/hosts" -A 15 | grep -v "/etc/hosts" | awk "NF" | sed -e "s/# //" >> /etc/hosts'`
+#### Add mapping for hosts of @PROJECT_NAME@ app  
+`sudo su -c 'echo "## @PROJECT_NAME@ APP" >> /etc/hosts && cat docker-compose.yml | grep "/etc/hosts" -A 15 | grep -v "/etc/hosts" | awk "NF" | sed -e "s/# //" >> /etc/hosts'`
 
-or add necessary mapping manually, check this in `docker-composer.yml` file at bottom
+or setup necessary mapping manually, show info in `docker-composer.yml` at file bottom
 
-#### Install Python virtual environment and sync with host
+#### Install Python virtual environment and sync this one with the host
 `bash api/bin/venv-sync.sh`
 
-wait until execution finished
+wait until the execution is finished
 
 ###### if you will roll back and unsync venv then run: bash api/bin/venv-sync.sh rm  
  
-#### Stat authzprovider app
+#### Stat @PROJECT_NAME@ app
 `docker compose up -d`
 
 ###### check all docker services are up
 
 `docker compose ps`
 
-#### Manage backend from api container 
-start and logg into api container
+#### Manage API from container
+logg into api container
 `docker compose exec -u $(id -u):$(id -g) api bash`
 
-###### To manage API via flask CLI you can display existing commands
+###### To manage API via flask CLI you can display list of existing commands
 
 `flask --help`
 
@@ -78,9 +78,9 @@ apply all existing migrations to database
 
 `flask user:add:webapp`
 
-#### Api Specification as Swagger
-open in browser: https://authzprovider-api.com/api/doc 
-your see s swagger authzprovider API documentation page
+#### Api Specification as Open API via Swagger
+open in browser: https://@PROJECT_NAME@-api.com/api/doc 
+your see s swagger @PROJECT_NAME@ API documentation page
 
 #### Show logs from api docker container
 `docker compose logs --tail 20 -f api`
