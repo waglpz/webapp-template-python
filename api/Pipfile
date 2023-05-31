@@ -4,6 +4,19 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+gunicorn = "*"
+flask = "*"
+flask-cors = "*"
+flask-restx = "*"
+flask-sqlalchemy = "*"
+flask-marshmallow = "*"
+flask-migrate = "*"
+sqlalchemy = "*"
+marshmallow = "*"
+marshmallow-sqlalchemy = "*"
+python-dotenv = "*"
+click = "*"
+flask-rest-paginate = "*"
 
 [dev-packages]
 
